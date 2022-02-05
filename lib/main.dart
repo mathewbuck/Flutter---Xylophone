@@ -16,46 +16,61 @@ class XylophoneApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        appBar: AppBar (
+        title: Text('Super-Mc-Awesome Xylphone'),
+          centerTitle: true,
+          backgroundColor: Colors.grey.shade800,
+        ),
+        backgroundColor: Colors.grey.shade800,
         body: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              FlatButton(
-                color: Colors.red,
+              TextButton(
+                style: TextButton.styleFrom(backgroundColor: Colors.red, primary: Colors.black),
+                child: Text('C'),
                 onPressed: (){
                 PlaySound(1);
               },
                 ),
-              FlatButton(
-                color: Colors.orange,
+              TextButton(
+                style: TextButton.styleFrom(backgroundColor: Colors.orange, primary: Colors.black),
+                child: Text('D'),
                 onPressed: (){
                   PlaySound(2);
                 },
               ),
-              FlatButton(
-                color: Colors.yellow,
+              TextButton(
+                style: TextButton.styleFrom(backgroundColor: Colors.yellow, primary: Colors.black),
+                child: Text('E'),
                 onPressed: (){
                   PlaySound(3);
                 },
               ),
-              FlatButton(
-                color: Colors.lightGreen,
+              TextButton(
+                style: TextButton.styleFrom(backgroundColor: Colors.lightGreen, primary: Colors.black),
+                child: Text('F'),
                 onPressed: (){
                   PlaySound(4);
                 },
-              ),FlatButton(
-                color: Colors.green,
+              ),
+              TextButton(
+                style: TextButton.styleFrom(backgroundColor: Colors.green, primary: Colors.black),
+                child: Text('G'),
                 onPressed: (){
                   PlaySound(5);
                 },
-              ),FlatButton(
-                color: Colors.blue,
+              ),
+              TextButton(
+                style: TextButton.styleFrom(backgroundColor: Colors.blue, primary: Colors.black),
+                child: Text('A'),
                 onPressed: (){
                   PlaySound(6);
                 },
               ),
-              FlatButton(
-                color: Colors.purple,
+              TextButton(
+                style: TextButton.styleFrom(backgroundColor: Colors.purple, primary: Colors.black),
+                child: Text('B'),
                 onPressed: (){
                   PlaySound(7);
                 },
