@@ -1,16 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-
-
 void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
   @override
 
+  // sick nasty function for playing sound
   void PlaySound(int soundNumber) {
     final player = AudioCache();
     player.play('note$soundNumber.wav');
+  }
+
+
+  Expanded BuildKeyz({String buttonText, Color color,Color textColor, int soundNumber }) {
+    return Expanded(
+      child: FlatButton(
+        color: color,
+        child: Text(buttonText),
+        textColor: textColor,
+        onPressed: (){
+          PlaySound(soundNumber);
+        },
+      ),
+    );
   }
 
   Widget build(BuildContext context) {
@@ -25,56 +38,23 @@ class XylophoneApp extends StatelessWidget {
         body: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              TextButton(
-                style: TextButton.styleFrom(backgroundColor: Colors.red, primary: Colors.black),
-                child: Text('C'),
-                onPressed: (){
-                PlaySound(1);
-              },
-                ),
-              TextButton(
-                style: TextButton.styleFrom(backgroundColor: Colors.orange, primary: Colors.black),
-                child: Text('D'),
-                onPressed: (){
-                  PlaySound(2);
-                },
-              ),
-              TextButton(
-                style: TextButton.styleFrom(backgroundColor: Colors.yellow, primary: Colors.black),
-                child: Text('E'),
-                onPressed: (){
-                  PlaySound(3);
-                },
-              ),
-              TextButton(
-                style: TextButton.styleFrom(backgroundColor: Colors.lightGreen, primary: Colors.black),
-                child: Text('F'),
-                onPressed: (){
-                  PlaySound(4);
-                },
-              ),
-              TextButton(
-                style: TextButton.styleFrom(backgroundColor: Colors.green, primary: Colors.black),
-                child: Text('G'),
-                onPressed: (){
-                  PlaySound(5);
-                },
-              ),
-              TextButton(
-                style: TextButton.styleFrom(backgroundColor: Colors.blue, primary: Colors.black),
-                child: Text('A'),
-                onPressed: (){
-                  PlaySound(6);
-                },
-              ),
-              TextButton(
-                style: TextButton.styleFrom(backgroundColor: Colors.purple, primary: Colors.black),
-                child: Text('B'),
-                onPressed: (){
-                  PlaySound(7);
-                },
-              ),
+            children: <Widget>[
+              Padding(padding: EdgeInsets.all(5.0),),
+              BuildKeyz(color: Colors.red, textColor: Colors.black, soundNumber: 1, buttonText: 'C'),
+              Padding(padding: EdgeInsets.all(5.0),),
+              BuildKeyz(color: Colors.orange,textColor: Colors.black, soundNumber: 2, buttonText: 'D'),
+              Padding(padding: EdgeInsets.all(5.0),),
+              BuildKeyz(color: Colors.yellow, textColor: Colors.black, soundNumber: 3, buttonText: 'E'),
+              Padding(padding: EdgeInsets.all(5.0),),
+              BuildKeyz(color: Colors.lightGreen, textColor: Colors.black, soundNumber: 4, buttonText: 'F'),
+              Padding(padding: EdgeInsets.all(5.0),),
+              BuildKeyz(color: Colors.green, textColor: Colors.black, soundNumber: 5, buttonText: 'G'),
+              Padding(padding: EdgeInsets.all(5.0),),
+              BuildKeyz(color: Colors.blue, textColor: Colors.black, soundNumber: 6, buttonText: 'A'),
+              Padding(padding: EdgeInsets.all(5.0),),
+              BuildKeyz(color: Colors.purple, textColor: Colors.black, soundNumber: 7, buttonText: 'B'),
+              Padding(padding: EdgeInsets.all(5.0),),
+
             ],
           ),
         ),
